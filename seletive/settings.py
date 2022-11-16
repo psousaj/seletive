@@ -14,9 +14,10 @@ from pathlib import Path
 import os
 from django.contrib.messages import constants
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+BASE_D = str(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -27,7 +28,9 @@ SECRET_KEY = 'django-insecure-&))53kyh@-!f5!kr^fp&x^@9!lhj&(_%wg2mx!vrn2yebzhls_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app',
+    'localhost',
+]
 
 
 # Application definition
@@ -81,9 +84,17 @@ WSGI_APPLICATION = 'seletive.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django_cockroachdb',
+        'NAME': 'BASE_DIR/db.sqlite3',
+        'USER': 'psousaj',
+        'PASSWORD': '282910sF',
+        'HOST': 'postgresql://psousaj:rWOPwikM7O09Y10-9kZPdQ@free-tier14.aws-us-east-1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&options=--cluster%3Dseletive-6719',
+        'PORT': '26257',
+        'OPTIONS': {
+            'sslmode': 'verify-full',
+            'options': '--cluster={routing-id}'
+        },
+    },
 }
 
 
