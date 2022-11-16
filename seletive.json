@@ -1,0 +1,13 @@
+{
+    "builds": [{
+        "src": "seletive/wsgi.py",
+        "use": "@ardnt/seletive-python-wsgi",
+        "config": { "maxLambdaSize": "15mb" }
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "seletive/wsgi.py"
+        }
+    ]
+}
