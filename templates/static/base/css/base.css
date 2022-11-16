@@ -1,0 +1,39 @@
+body {
+  background-color: #c6c6c6 !important;
+}
+
+.bg-nav {
+  background-color: #3b0032 !important;
+  padding: 10px;
+}
+
+footer {
+  margin-top: 7rem;
+  color: #fff;
+  background-color: #3b0032;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+
+  width: 100vw;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  padding: 1rem;
+  /* text-align: center; */
+}
+
+.footer-name {
+  font-size: 1.5rem !important;
+}
+
+.footer-social a {
+  padding-inline: 2rem;
+}
+
+.fa-brands {
+  color: #eee;
+  font-size: 2rem;
+  /* margin-top: 2rem; */
+}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+<link href="{% static 'empresa/css/empresa.css' %}" rel="stylesheet">
+{% endblock%}
+
+
+{% block 'body' %}
+
+
+<br>
+<div class="container">
+    {% if messages %}
+    {% for message in messages %}
+    <br>
+    <section class="alert {{message.tags}}">
+        {{message}}
+    </section>
+    {% endfor %}
+    {% endif %}
+    <br>
+    <br>
+    <h1>Indo em : 5s</h1>
+    <script>
+        setTimeout(function () {
+            window.location.href = "./empresas"
+        }, 5000)
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</div>
+<br>
+<br>
+
+{% endblock %}
